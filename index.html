@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="សិរីមង្គលអាពាហ៍ពិពាហ៍ | សុខា វិបុល &amp; ស៊ុត ស្រីតី">
-    <meta property="og:description" content="ថ្ងៃពុធ ទី២៣ ខែធ្នូ ឆ្នាំ២០២៦ វេលាម៉ោង ៤:០០ រសៀល • នៅហាង អាក្លូកាហ្វេ (Aklo Caffee and Tea) ក្រុងដូនកែវ ខេត្តតាកែវ">
+    <meta property="og:description"
+        content="ថ្ងៃពុធ ទី២៣ ខែធ្នូ ឆ្នាំ២០២៦ វេលាម៉ោង ៤:០០ រសៀល • នៅហាង អាក្លូកាហ្វេ (Aklo Caffee and Tea) ក្រុងដូនកែវ ខេត្តតាកែវ">
     <meta property="og:type" content="website">
     <title>សិរីមង្គលអាពាហ៍ពិពាហ៍ — សុខា វិបុល &amp; ស៊ុត ស្រីតី</title>
 
@@ -13,7 +14,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Kantumruy+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Moul&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Kantumruy+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Moul&display=swap"
+        rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -60,17 +63,17 @@
             background-size: 32px 32px;
             background-position: 0 0, 16px 16px;
         }
-        
+
         .bg-royal-crimson {
             background: radial-gradient(circle at top center, #6B0B1C 0%, #4A0410 55%, #2E0209 100%);
         }
-        
+
         .text-gold-gradient {
             background: linear-gradient(135deg, #F3D06B 0%, #D4AF37 45%, #F9E7A8 75%, #B58E22 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        
+
         .font-moul {
             line-height: 2 !important;
             padding-top: 8px;
@@ -78,76 +81,79 @@
             overflow: visible !important;
             display: inline-block;
         }
-        
+
         @keyframes fadeUp {
             from {
                 opacity: 0;
                 transform: translateY(22px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
+
         @keyframes pulseGlow {
+
             0%,
             100% {
                 box-shadow: 0 0 25px rgba(212, 175, 55, 0.28);
             }
+
             50% {
                 box-shadow: 0 0 42px rgba(243, 208, 107, 0.5);
             }
         }
-        
+
         .anim-1 {
             animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
-        
+
         .anim-2 {
             animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
             opacity: 0;
         }
-        
+
         .anim-3 {
             animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
             opacity: 0;
         }
-        
+
         .anim-4 {
             animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.45s forwards;
             opacity: 0;
         }
-        
+
         .portrait-glow {
             animation: pulseGlow 4s ease-in-out infinite;
         }
-        
+
         .reveal {
             opacity: 0;
             transform: translateY(24px);
             transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
         }
-        
+
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         body.edit-mode-active .editable-photo-slot {
             outline: 2.5px dashed #F3D06B;
             outline-offset: 4px;
             cursor: pointer;
         }
-        
+
         body.edit-mode-active .photo-edit-badge {
             display: flex !important;
         }
-        
+
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
-        
+
         .no-scrollbar {
             -ms-overflow-style: none;
             scrollbar-width: none;
@@ -155,22 +161,27 @@
     </style>
 </head>
 
-<body class="bg-khmer-silk text-crimson-950 font-khmer antialiased selection:bg-khmergold-300/40 selection:text-crimson-900 overflow-x-hidden">
+<body
+    class="bg-khmer-silk text-crimson-950 font-khmer antialiased selection:bg-khmergold-300/40 selection:text-crimson-900 overflow-x-hidden">
 
     <input type="file" id="global-photo-input" accept="image/*" class="hidden">
 
     <!-- Edit Mode Banner -->
-    <div id="edit-mode-banner" class="hidden fixed top-14 sm:top-16 inset-x-0 z-40 bg-jade-900 text-silk-ivory border-b border-khmergold-400/50 px-4 py-2.5 shadow-lg">
+    <div id="edit-mode-banner"
+        class="hidden fixed top-14 sm:top-16 inset-x-0 z-40 bg-jade-900 text-silk-ivory border-b border-khmergold-400/50 px-4 py-2.5 shadow-lg">
         <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm">
             <div class="flex items-center gap-2">
                 <span class="inline-block w-2.5 h-2.5 rounded-full bg-khmergold-300 animate-ping"></span>
-                <span><strong>របៀបកែរូបភាព (Photo Edit Mode):</strong> ចុចលើរូបណាមួយដើម្បីប្តូរ ឬចុច «+ បន្ថែមរូបថ្មី»</span>
+                <span><strong>របៀបកែរូបភាព (Photo Edit Mode):</strong> ចុចលើរូបណាមួយដើម្បីប្តូរ ឬចុច «+
+                    បន្ថែមរូបថ្មី»</span>
             </div>
             <div class="flex items-center gap-2">
-                <button type="button" onclick="triggerPhotoUpload('add')" class="px-3 py-1 rounded-full bg-khmergold-400 text-crimson-950 font-bold hover:bg-khmergold-300 transition">
+                <button type="button" onclick="triggerPhotoUpload('add')"
+                    class="px-3 py-1 rounded-full bg-khmergold-400 text-crimson-950 font-bold hover:bg-khmergold-300 transition">
                     + បន្ថែមរូបថ្មី (Add Photo)
                 </button>
-                <button type="button" onclick="resetCustomData()" class="px-3 py-1 rounded-full bg-crimson-800 text-silk-ivory hover:bg-crimson-700 transition border border-khmergold-400/30">
+                <button type="button" onclick="resetCustomData()"
+                    class="px-3 py-1 rounded-full bg-crimson-800 text-silk-ivory hover:bg-crimson-700 transition border border-khmergold-400/30">
                     កំណត់ដើមវិញ (Reset)
                 </button>
             </div>
@@ -178,75 +189,98 @@
     </div>
 
     <!-- Sticky Header -->
-    <header class="fixed top-0 inset-x-0 z-50 bg-crimson-900/95 backdrop-blur-md border-b border-khmergold-400/30 text-silk-ivory shadow-md">
+    <header
+        class="fixed top-0 inset-x-0 z-50 bg-crimson-900/95 backdrop-blur-md border-b border-khmergold-400/30 text-silk-ivory shadow-md">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
-            <a href="#top" class="flex items-center gap-2 font-serif italic font-bold text-lg sm:text-xl text-khmergold-300 tracking-wide">
-                <span class="px-2.5 py-0.5 rounded-full bg-jade-900 border border-khmergold-400/50 text-khmergold-200" id="nav-monogram">BJ</span>
-                <span class="font-khmer not-italic text-xs sm:text-sm text-silk-cream hidden xs:inline">វិបុល &amp; ស្រីតី</span>
+            <a href="#top"
+                class="flex items-center gap-2 font-serif italic font-bold text-lg sm:text-xl text-khmergold-300 tracking-wide">
+                <span class="px-2.5 py-0.5 rounded-full bg-jade-900 border border-khmergold-400/50 text-khmergold-200"
+                    id="nav-monogram">BJ</span>
+                <span class="font-khmer not-italic text-xs sm:text-sm text-silk-cream hidden xs:inline">វិបុល &amp;
+                    ស្រីតី</span>
             </a>
 
-            <nav aria-label="Primary Navigation" class="flex items-center space-x-4 sm:space-x-7 overflow-x-auto no-scrollbar py-1 text-xs sm:text-sm">
-                <a href="#ceremony" class="hover:text-khmergold-300 transition-colors whitespace-nowrap">កម្មវិធីបុណ្យ <span class="hidden md:inline font-serif italic text-khmergold-200/80">(Schedule)</span></a>
-                <a href="#gallery" class="hover:text-khmergold-300 transition-colors whitespace-nowrap">កម្រងរូបភាព <span class="hidden md:inline font-serif italic text-khmergold-200/80">(Gallery)</span></a>
+            <nav aria-label="Primary Navigation"
+                class="flex items-center space-x-4 sm:space-x-7 overflow-x-auto no-scrollbar py-1 text-xs sm:text-sm">
+                <a href="#ceremony"
+                    class="hover:text-khmergold-300 transition-colors whitespace-nowrap">កម្មវិធីរៀបអាពាហ៏ពិពាហ៏ <span
+                        class="hidden md:inline font-serif italic text-khmergold-200/80">(Schedule)</span></a>
+                <a href="#gallery" class="hover:text-khmergold-300 transition-colors whitespace-nowrap">កម្រងរូបភាព
+                    <span class="hidden md:inline font-serif italic text-khmergold-200/80">(Gallery)</span></a>
             </nav>
         </div>
     </header>
 
     <!-- 1. ROYAL KHMER HERO -->
-    <section id="top" class="relative min-h-screen bg-royal-crimson text-silk-ivory pt-24 pb-20 px-4 sm:px-6 flex flex-col items-center justify-center text-center overflow-hidden">
+    <section id="top"
+        class="relative min-h-screen bg-royal-crimson text-silk-ivory pt-24 pb-20 px-4 sm:px-6 flex flex-col items-center justify-center text-center overflow-hidden">
 
-        <svg class="absolute top-16 left-2 sm:left-6 w-28 sm:w-44 h-28 sm:h-44 text-khmergold-400/35 pointer-events-none" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M8 152V28C8 16.9543 16.9543 8 28 8H152" stroke="currentColor" stroke-width="2"/>
-            <path d="M18 140V34C18 25.1634 25.1634 18 34 18H140" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4"/>
-            <path d="M24 24C45 24 58 32 68 48C50 48 38 42 24 24Z" fill="currentColor"/>
-            <path d="M24 24C24 45 32 58 48 68C48 50 42 38 24 24Z" fill="currentColor"/>
-            <circle cx="24" cy="24" r="5" fill="#F3D06B"/>
+        <svg class="absolute top-16 left-2 sm:left-6 w-28 sm:w-44 h-28 sm:h-44 text-khmergold-400/35 pointer-events-none"
+            viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M8 152V28C8 16.9543 16.9543 8 28 8H152" stroke="currentColor" stroke-width="2" />
+            <path d="M18 140V34C18 25.1634 25.1634 18 34 18H140" stroke="currentColor" stroke-width="1"
+                stroke-dasharray="4 4" />
+            <path d="M24 24C45 24 58 32 68 48C50 48 38 42 24 24Z" fill="currentColor" />
+            <path d="M24 24C24 45 32 58 48 68C48 50 42 38 24 24Z" fill="currentColor" />
+            <circle cx="24" cy="24" r="5" fill="#F3D06B" />
         </svg>
 
-        <svg class="absolute top-16 right-2 sm:right-6 w-28 sm:w-44 h-28 sm:h-44 text-khmergold-400/35 pointer-events-none scale-x-[-1]" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M8 152V28C8 16.9543 16.9543 8 28 8H152" stroke="currentColor" stroke-width="2"/>
-            <path d="M18 140V34C18 25.1634 25.1634 18 34 18H140" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4"/>
-            <path d="M24 24C45 24 58 32 68 48C50 48 38 42 24 24Z" fill="currentColor"/>
-            <path d="M24 24C24 45 32 58 48 68C48 50 42 38 24 24Z" fill="currentColor"/>
-            <circle cx="24" cy="24" r="5" fill="#F3D06B"/>
+        <svg class="absolute top-16 right-2 sm:right-6 w-28 sm:w-44 h-28 sm:h-44 text-khmergold-400/35 pointer-events-none scale-x-[-1]"
+            viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M8 152V28C8 16.9543 16.9543 8 28 8H152" stroke="currentColor" stroke-width="2" />
+            <path d="M18 140V34C18 25.1634 25.1634 18 34 18H140" stroke="currentColor" stroke-width="1"
+                stroke-dasharray="4 4" />
+            <path d="M24 24C45 24 58 32 68 48C50 48 38 42 24 24Z" fill="currentColor" />
+            <path d="M24 24C24 45 32 58 48 68C48 50 42 38 24 24Z" fill="currentColor" />
+            <circle cx="24" cy="24" r="5" fill="#F3D06B" />
         </svg>
 
-        <div class="relative z-10 max-w-3xl w-full mx-auto px-5 py-10 sm:px-12 sm:py-14 rounded-3xl border-2 border-khmergold-400/45 bg-crimson-950/60 backdrop-blur-sm shadow-2xl">
+        <div
+            class="relative z-10 max-w-3xl w-full mx-auto px-5 py-10 sm:px-12 sm:py-14 rounded-3xl border-2 border-khmergold-400/45 bg-crimson-950/60 backdrop-blur-sm shadow-2xl">
 
             <div class="anim-1 flex justify-center mb-3">
-                <svg class="w-16 h-10 text-khmergold-300" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M50 6C44 20 42 32 50 46C58 32 56 20 50 6Z" fill="currentColor"/>
-                    <path d="M35 16C32 28 35 38 46 47C42 35 40 26 35 16Z" fill="currentColor" fill-opacity="0.85"/>
-                    <path d="M65 16C68 28 65 38 54 47C58 35 60 26 65 16Z" fill="currentColor" fill-opacity="0.85"/>
-                    <path d="M15 52H85" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <svg class="w-16 h-10 text-khmergold-300" viewBox="0 0 100 60" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M50 6C44 20 42 32 50 46C58 32 56 20 50 6Z" fill="currentColor" />
+                    <path d="M35 16C32 28 35 38 46 47C42 35 40 26 35 16Z" fill="currentColor" fill-opacity="0.85" />
+                    <path d="M65 16C68 28 65 38 54 47C58 35 60 26 65 16Z" fill="currentColor" fill-opacity="0.85" />
+                    <path d="M15 52H85" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
                 </svg>
             </div>
 
             <h1 class="anim-1 font-moul text-xl sm:text-4xl md:text-5xl text-gold-gradient tracking-normal py-2 px-1">
                 សិរីមង្គលអាពាហ៍ពិពាហ៍
             </h1>
-            <p class="anim-1 font-serif italic text-base sm:text-xl text-khmergold-200/90 tracking-[0.2em] uppercase mt-1">
+            <p
+                class="anim-1 font-serif italic text-base sm:text-xl text-khmergold-200/90 tracking-[0.2em] uppercase mt-1">
                 Royal Khmer Wedding Invitation
             </p>
 
-            <div class="anim-2 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 text-xs sm:text-sm text-silk-cream/95 mt-6 pt-5 border-t border-khmergold-400/25">
+            <div
+                class="anim-2 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 text-xs sm:text-sm text-silk-cream/95 mt-6 pt-5 border-t border-khmergold-400/25">
                 <div class="p-3 rounded-2xl bg-crimson-900/45 border border-khmergold-400/20">
                     <p class="text-khmergold-300 font-semibold text-xs">មាតាបិតាខាងប្រុស (Groom's Parents)</p>
-                    <p id="groom-parents-display" class="mt-1.5 font-medium leading-relaxed">លោក ណុប សុខា<br>លោកស្រី អៀម សុភាព</p>
+                    <p id="groom-parents-display" class="mt-1.5 font-medium leading-relaxed">លោក ណុប សុខា<br>លោកស្រី អៀម
+                        សុភាព</p>
                 </div>
                 <div class="p-3 rounded-2xl bg-crimson-900/45 border border-khmergold-400/20">
                     <p class="text-khmergold-300 font-semibold text-xs">មាតាបិតាខាងស្រី (Bride's Parents)</p>
-                    <p id="bride-parents-display" class="mt-1.5 font-medium leading-relaxed">លោក ស៊ុត បូរ៉ា<br>លោកស្រី ញ៉េប ធីតា</p>
+                    <p id="bride-parents-display" class="mt-1.5 font-medium leading-relaxed">លោក ស៊ុត បូរ៉ា<br>លោកស្រី
+                        ញ៉េប ធីតា</p>
                 </div>
             </div>
 
             <!-- Couple Portrait (Default: ./photos/3.jpg; clickable to change) -->
             <div class="anim-2 my-7 flex flex-col items-center">
-                <div onclick="triggerPhotoUpload('hero')" class="editable-photo-slot group relative w-48 h-60 sm:w-56 sm:h-72 rounded-t-full rounded-b-3xl p-1.5 bg-gradient-to-b from-khmergold-300 via-khmergold-400 to-khmergold-600 portrait-glow cursor-pointer transition-transform duration-300 hover:scale-[1.02]"
+                <div onclick="triggerPhotoUpload('hero')"
+                    class="editable-photo-slot group relative w-48 h-60 sm:w-56 sm:h-72 rounded-t-full rounded-b-3xl p-1.5 bg-gradient-to-b from-khmergold-300 via-khmergold-400 to-khmergold-600 portrait-glow cursor-pointer transition-transform duration-300 hover:scale-[1.02]"
                     title="ចុចដើម្បីប្តូររូបភាពគូស្នេហ៍ / Click to change couple portrait">
                     <div class="w-full h-full rounded-t-full rounded-b-[20px] overflow-hidden bg-crimson-900 relative">
-                        <img id="photo-hero" src="./photos/wedding-01.jpg" onerror="this.src='https://placehold.co/600x750/6B0B1C/F3D06B?text=Couple+Portrait'" alt="Groom and Bride Portrait" class="w-full h-full object-cover">
-                        <div class="photo-edit-badge hidden group-hover:flex absolute inset-0 bg-crimson-950/65 backdrop-blur-[2px] flex-col items-center justify-center p-3 text-center transition-opacity">
+                        <img id="photo-hero" src="./photos/wedding-01.jpg"
+                            onerror="this.src='https://placehold.co/600x750/6B0B1C/F3D06B?text=Couple+Portrait'"
+                            alt="Groom and Bride Portrait" class="w-full h-full object-cover">
+                        <div
+                            class="photo-edit-badge hidden group-hover:flex absolute inset-0 bg-crimson-950/65 backdrop-blur-[2px] flex-col items-center justify-center p-3 text-center transition-opacity">
                             <span class="text-xs font-bold text-khmergold-200">ប្តូររូបភាពគូស្នេហ៍</span>
                             <span class="text-[11px] text-silk-ivory/85">Tap to Change Photo</span>
                         </div>
@@ -256,38 +290,52 @@
 
             <div class="anim-3 space-y-2">
                 <p class="text-xs sm:text-sm text-khmergold-200/90 leading-relaxed max-w-2xl mx-auto">
-                    <span class="block font-bold text-khmergold-300 text-sm sm:text-base mb-1">មានកិត្តិយសសូមគោរពអញ្ជើញ</span> ឯកឧត្តម លោកឧកញ៉ា លោកជំទាវ លោក លោកស្រី អ្នកនាងកញ្ញា អញ្ជើញចូលរួមជាភ្ញៀវកិត្តិយស ដើម្បីចម្រើនពរជ័យ សិរីសួស្តី ជ័យមង្គល ក្នុងពិធីរៀបអាពាហ៍ពិពាហ៍
+                    <span
+                        class="block font-bold text-khmergold-300 text-sm sm:text-base mb-1">មានកិត្តិយសសូមគោរពអញ្ជើញ</span>
+                    ឯកឧត្តម លោកឧកញ៉ា លោកជំទាវ លោក លោកស្រី អ្នកនាងកញ្ញា អញ្ជើញចូលរួមជាភ្ញៀវកិត្តិយស ដើម្បីចម្រើនពរជ័យ
+                    សិរីសួស្តី ជ័យមង្គល ក្នុងពិធីរៀបអាពាហ៍ពិពាហ៍
                     កូនប្រុស - ស្រី របស់យើងខ្ញុំ
                 </p>
                 <div class="pt-4 pb-1 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
                     <div>
-                        <span class="block text-[11px] uppercase tracking-widest text-khmergold-300">កូនប្រុសនាម • កូនប្រុស (GROOM)</span>
-                        <h2 id="groom-name-kh" class="font-moul text-xl sm:text-3xl text-silk-ivory mt-1">សុខា វិបុល</h2>
-                        <p id="groom-name-en" class="font-serif font-semibold tracking-wider text-base sm:text-xl text-jade-800 bg-khmergold-200/95 px-3 py-0.5 rounded-full inline-block mt-1">SOKHA VIBOL</p>
+                        <span class="block text-[11px] uppercase tracking-widest text-khmergold-300">កូនប្រុសនាម •
+                            កូនប្រុស (GROOM)</span>
+                        <h2 id="groom-name-kh" class="font-moul text-xl sm:text-3xl text-silk-ivory mt-1">សុខា វិបុល
+                        </h2>
+                        <p id="groom-name-en"
+                            class="font-serif font-semibold tracking-wider text-base sm:text-xl text-jade-800 bg-khmergold-200/95 px-3 py-0.5 rounded-full inline-block mt-1">
+                            SOKHA VIBOL</p>
                     </div>
 
                     <div class="my-1 sm:my-0 flex flex-col items-center">
                         <span class="text-[11px] text-khmergold-300 mb-1">ជាគូនឹង</span>
-                        <div id="hero-monogram-badge" class="w-14 h-14 rounded-full border-2 border-khmergold-300 bg-jade-900 shadow-lg flex items-center justify-center font-serif italic font-bold text-2xl text-khmergold-200">
+                        <div id="hero-monogram-badge"
+                            class="w-14 h-14 rounded-full border-2 border-khmergold-300 bg-jade-900 shadow-lg flex items-center justify-center font-serif italic font-bold text-2xl text-khmergold-200">
                             BJ
                         </div>
                     </div>
 
                     <div>
-                        <span class="block text-[11px] uppercase tracking-widest text-khmergold-300">កូនស្រីនាម • កូនស្រី (BRIDE)</span>
-                        <h2 id="bride-name-kh" class="font-moul text-xl sm:text-3xl text-silk-ivory mt-1">ស៊ុត ស្រីតី</h2>
-                        <p id="bride-name-en" class="font-serif font-semibold tracking-wider text-base sm:text-xl text-jade-800 bg-khmergold-200/95 px-3 py-0.5 rounded-full inline-block mt-1">SUTH SREY TEY</p>
+                        <span class="block text-[11px] uppercase tracking-widest text-khmergold-300">កូនស្រីនាម •
+                            កូនស្រី (BRIDE)</span>
+                        <h2 id="bride-name-kh" class="font-moul text-xl sm:text-3xl text-silk-ivory mt-1">ស៊ុត ស្រីតី
+                        </h2>
+                        <p id="bride-name-en"
+                            class="font-serif font-semibold tracking-wider text-base sm:text-xl text-jade-800 bg-khmergold-200/95 px-3 py-0.5 rounded-full inline-block mt-1">
+                            SUTH SREY TEY</p>
                     </div>
                 </div>
             </div>
 
-            <div class="anim-3 mt-6 py-4 px-4 sm:px-6 rounded-2xl bg-crimson-900/80 border border-khmergold-400/35 space-y-1.5">
+            <div
+                class="anim-3 mt-6 py-4 px-4 sm:px-6 rounded-2xl bg-crimson-900/80 border border-khmergold-400/35 space-y-1.5">
                 <p class="text-xs text-khmergold-200/85">និងពិសាភោជនីយអាហារ ដែលនឹងប្រព្រឹត្តទៅនៅ</p>
                 <p id="wedding-date-kh" class="font-semibold text-sm sm:text-base text-khmergold-300 leading-relaxed">
                     ថ្ងៃ ពុធ ទី ២៣ ខែ ធ្នូ ឆ្នាំ ២០២៦ ត្រូវនឹងថ្ងៃ ១៤កើត ខែ មិគសិរ ឆ្នាំ មមី អដ្ឋស័ក ព.ស ២៥៧០
                 </p>
                 <p id="wedding-time-venue-kh" class="text-xs sm:text-sm text-silk-ivory leading-relaxed">
-                    វេលាម៉ោង ៤:០០ រសៀល ស្ថិតនៅគេហដ្ឋានខាងប្រុស ភូមិផ្សារតាកែវ សង្កាត់រកាក្នុង ក្រុងដូនកែវ ខេត្តតាកែវ (នៅហាង អាក្លូកាហ្វេ Aklo Caffee and Tea) ដោយមេត្រីភាព។
+                    វេលាម៉ោង ៤:០០ រសៀល ស្ថិតនៅគេហដ្ឋានខាងប្រុស ភូមិផ្សារតាកែវ សង្កាត់រកាក្នុង ក្រុងដូនកែវ ខេត្តតាកែវ
+                    (នៅហាង អាក្លូកាហ្វេ Aklo Caffee and Tea) ដោយមេត្រីភាព។
                 </p>
                 <p id="wedding-date-en" class="font-serif font-semibold text-base sm:text-lg text-khmergold-200 pt-1">
                     On Wednesday 23<sup>rd</sup> December 2026, 4:00 pm
@@ -296,28 +344,38 @@
 
             <div class="anim-4 grid grid-cols-4 gap-2 sm:gap-4 max-w-md mx-auto mt-7">
                 <div class="rounded-2xl bg-crimson-900/90 border border-khmergold-400/35 py-3 px-1.5">
-                    <span id="cd-days" class="block font-serif text-2xl sm:text-3xl font-bold text-khmergold-300">00</span>
-                    <span class="block text-[11px] text-silk-cream mt-0.5">ថ្ងៃ <span class="text-khmergold-200/75 text-[10px]">Days</span></span>
+                    <span id="cd-days"
+                        class="block font-serif text-2xl sm:text-3xl font-bold text-khmergold-300">00</span>
+                    <span class="block text-[11px] text-silk-cream mt-0.5">ថ្ងៃ <span
+                            class="text-khmergold-200/75 text-[10px]">Days</span></span>
                 </div>
                 <div class="rounded-2xl bg-crimson-900/90 border border-khmergold-400/35 py-3 px-1.5">
-                    <span id="cd-hours" class="block font-serif text-2xl sm:text-3xl font-bold text-khmergold-300">00</span>
-                    <span class="block text-[11px] text-silk-cream mt-0.5">ម៉ោង <span class="text-khmergold-200/75 text-[10px]">Hours</span></span>
+                    <span id="cd-hours"
+                        class="block font-serif text-2xl sm:text-3xl font-bold text-khmergold-300">00</span>
+                    <span class="block text-[11px] text-silk-cream mt-0.5">ម៉ោង <span
+                            class="text-khmergold-200/75 text-[10px]">Hours</span></span>
                 </div>
                 <div class="rounded-2xl bg-crimson-900/90 border border-khmergold-400/35 py-3 px-1.5">
-                    <span id="cd-minutes" class="block font-serif text-2xl sm:text-3xl font-bold text-khmergold-300">00</span>
-                    <span class="block text-[11px] text-silk-cream mt-0.5">នាទី <span class="text-khmergold-200/75 text-[10px]">Mins</span></span>
+                    <span id="cd-minutes"
+                        class="block font-serif text-2xl sm:text-3xl font-bold text-khmergold-300">00</span>
+                    <span class="block text-[11px] text-silk-cream mt-0.5">នាទី <span
+                            class="text-khmergold-200/75 text-[10px]">Mins</span></span>
                 </div>
                 <div class="rounded-2xl bg-crimson-900/90 border border-khmergold-400/35 py-3 px-1.5">
-                    <span id="cd-seconds" class="block font-serif text-2xl sm:text-3xl font-bold text-khmergold-300">00</span>
-                    <span class="block text-[11px] text-silk-cream mt-0.5">វិនាទី <span class="text-khmergold-200/75 text-[10px]">Secs</span></span>
+                    <span id="cd-seconds"
+                        class="block font-serif text-2xl sm:text-3xl font-bold text-khmergold-300">00</span>
+                    <span class="block text-[11px] text-silk-cream mt-0.5">វិនាទី <span
+                            class="text-khmergold-200/75 text-[10px]">Secs</span></span>
                 </div>
             </div>
 
             <div class="anim-4 mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-                <a href="#ceremony" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-khmergold-400 via-khmergold-300 to-khmergold-400 text-crimson-950 font-bold text-sm shadow-lg hover:brightness-105 active:scale-[0.99] transition">
+                <a href="#ceremony"
+                    class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-khmergold-400 via-khmergold-300 to-khmergold-400 text-crimson-950 font-bold text-sm shadow-lg hover:brightness-105 active:scale-[0.99] transition">
                     កម្មវិធីមង្គលការ • Wedding Schedule
                 </a>
-                <a href="#gallery" class="w-full sm:w-auto px-7 py-3.5 rounded-full border border-khmergold-400/50 bg-crimson-900/60 text-khmergold-200 hover:bg-crimson-800 text-sm transition">
+                <a href="#gallery"
+                    class="w-full sm:w-auto px-7 py-3.5 rounded-full border border-khmergold-400/50 bg-crimson-900/60 text-khmergold-200 hover:bg-crimson-800 text-sm transition">
                     កម្រងរូបភាព • Photo Gallery
                 </a>
             </div>
@@ -327,7 +385,8 @@
     <!-- 2. CEREMONY SCHEDULE -->
     <section id="ceremony" class="py-20 sm:py-28 px-4 sm:px-6 max-w-4xl mx-auto">
         <div class="text-center mb-14 reveal">
-            <span class="text-xs uppercase tracking-[0.25em] text-crimson-700 font-bold">Traditional Khmer Wedding Rituals</span>
+            <span class="text-xs uppercase tracking-[0.25em] text-crimson-700 font-bold">Traditional Khmer Wedding
+                Rituals</span>
             <h2 class="font-moul text-2xl sm:text-4xl text-crimson-900 mt-2">កម្មវិធីមង្គលការ</h2>
             <div class="flex items-center justify-center gap-3 mt-4">
                 <span class="h-px w-16 bg-khmergold-500/60"></span>
@@ -337,80 +396,108 @@
         </div>
 
         <div class="space-y-4 sm:space-y-5 reveal">
-            <div class="rounded-2xl bg-white/90 border border-khmergold-400/35 p-5 sm:p-6 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-khmergold-500 transition">
+            <div
+                class="rounded-2xl bg-white/90 border border-khmergold-400/35 p-5 sm:p-6 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-khmergold-500 transition">
                 <div>
                     <h3 class="font-bold text-base sm:text-lg text-crimson-900">ពិធីហែជំនួន (កំណត់)</h3>
-                    <p class="font-serif italic text-sm sm:text-base text-crimson-700">Groom's Procession &amp; Fruit Gift Parade</p>
-                    <p class="text-xs sm:text-sm text-stone-600 mt-1">ពិធីជួបជុំភ្ញៀវកិត្តិយស និងហែជំនួនចូលរោងជ័យតាមប្រពៃណីខ្មែរ។</p>
+                    <p class="font-serif italic text-sm sm:text-base text-crimson-700">Groom's Procession &amp; Fruit
+                        Gift Parade</p>
+                    <p class="text-xs sm:text-sm text-stone-600 mt-1">ពិធីជួបជុំភ្ញៀវកិត្តិយស
+                        និងហែជំនួនចូលរោងជ័យតាមប្រពៃណីខ្មែរ។</p>
                 </div>
                 <div class="sm:text-right shrink-0">
-                    <span class="inline-block px-3.5 py-1.5 rounded-full bg-silk-cream border border-khmergold-400/40 text-crimson-900 font-bold text-xs sm:text-sm">
+                    <span
+                        class="inline-block px-3.5 py-1.5 rounded-full bg-silk-cream border border-khmergold-400/40 text-crimson-900 font-bold text-xs sm:text-sm">
                         ម៉ោង ០៧:០០ ព្រឹក &bull; 07:00 AM
                     </span>
                 </div>
             </div>
 
-            <div class="rounded-2xl bg-white/90 border border-khmergold-400/35 p-5 sm:p-6 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-khmergold-500 transition">
+            <div
+                class="rounded-2xl bg-white/90 border border-khmergold-400/35 p-5 sm:p-6 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-khmergold-500 transition">
                 <div>
                     <h3 class="font-bold text-base sm:text-lg text-crimson-900">ពិធីសែនព្រេន និងបំពាក់ចិញ្ចៀន</h3>
-                    <p class="font-serif italic text-sm sm:text-base text-crimson-700">Ancestral Blessing &amp; Ring Exchange</p>
-                    <p class="text-xs sm:text-sm text-stone-600 mt-1">ពិធីគោរពវិញ្ញាណក្ខន្ធបុព្វការីជន និងបំពាក់ចិញ្ចៀនភ្ជាប់និស្ស័យគូស្វាមីភរិយាថ្មី។</p>
+                    <p class="font-serif italic text-sm sm:text-base text-crimson-700">Ancestral Blessing &amp; Ring
+                        Exchange</p>
+                    <p class="text-xs sm:text-sm text-stone-600 mt-1">ពិធីគោរពវិញ្ញាណក្ខន្ធបុព្វការីជន
+                        និងបំពាក់ចិញ្ចៀនភ្ជាប់និស្ស័យគូស្វាមីភរិយាថ្មី។</p>
                 </div>
                 <div class="sm:text-right shrink-0">
-                    <span class="inline-block px-3.5 py-1.5 rounded-full bg-silk-cream border border-khmergold-400/40 text-crimson-900 font-bold text-xs sm:text-sm">
+                    <span
+                        class="inline-block px-3.5 py-1.5 rounded-full bg-silk-cream border border-khmergold-400/40 text-crimson-900 font-bold text-xs sm:text-sm">
                         ម៉ោង ០៨:៣០ ព្រឹក &bull; 08:30 AM
                     </span>
                 </div>
             </div>
 
-            <div class="rounded-2xl bg-white/90 border border-khmergold-400/35 p-5 sm:p-6 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-khmergold-500 transition">
+            <div
+                class="rounded-2xl bg-white/90 border border-khmergold-400/35 p-5 sm:p-6 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-khmergold-500 transition">
                 <div>
                     <h3 class="font-bold text-base sm:text-lg text-crimson-900">ពិធីកាត់សក់បង្កក់សិរី</h3>
-                    <p class="font-serif italic text-sm sm:text-base text-crimson-700">Traditional Hair Cutting &amp; Cleansing Ceremony</p>
-                    <p class="text-xs sm:text-sm text-stone-600 mt-1">ពិធីកាត់សក់បង្កក់សិរីសួស្តី ជូនពរជ័យដល់កូនកំលោះ និងកូនក្រមុំ។</p>
+                    <p class="font-serif italic text-sm sm:text-base text-crimson-700">Traditional Hair Cutting &amp;
+                        Cleansing Ceremony</p>
+                    <p class="text-xs sm:text-sm text-stone-600 mt-1">ពិធីកាត់សក់បង្កក់សិរីសួស្តី ជូនពរជ័យដល់កូនកំលោះ
+                        និងកូនក្រមុំ។</p>
                 </div>
                 <div class="sm:text-right shrink-0">
-                    <span class="inline-block px-3.5 py-1.5 rounded-full bg-silk-cream border border-khmergold-400/40 text-crimson-900 font-bold text-xs sm:text-sm">
+                    <span
+                        class="inline-block px-3.5 py-1.5 rounded-full bg-silk-cream border border-khmergold-400/40 text-crimson-900 font-bold text-xs sm:text-sm">
                         ម៉ោង ១០:០០ ព្រឹក &bull; 10:00 AM
                     </span>
                 </div>
             </div>
 
-            <div class="rounded-2xl bg-white/90 border border-khmergold-400/35 p-5 sm:p-6 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-khmergold-500 transition">
+            <div
+                class="rounded-2xl bg-white/90 border border-khmergold-400/35 p-5 sm:p-6 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-khmergold-500 transition">
                 <div>
                     <h3 class="font-bold text-base sm:text-lg text-crimson-900">ពិធីបង្វិលពពិល និងចងដៃ</h3>
-                    <p class="font-serif italic text-sm sm:text-base text-crimson-700">Popil Candle Blessing &amp; Sacred Wrist Tying</p>
-                    <p class="text-xs sm:text-sm text-stone-600 mt-1">ពិធីបង្វិលពពិលជុំវិញគូស្វាមីភរិយា និងចងអំបោះក្រហមប្រសិទ្ធពរជ័យ។</p>
+                    <p class="font-serif italic text-sm sm:text-base text-crimson-700">Popil Candle Blessing &amp;
+                        Sacred Wrist Tying</p>
+                    <p class="text-xs sm:text-sm text-stone-600 mt-1">ពិធីបង្វិលពពិលជុំវិញគូស្វាមីភរិយា
+                        និងចងអំបោះក្រហមប្រសិទ្ធពរជ័យ។</p>
                 </div>
                 <div class="sm:text-right shrink-0">
-                    <span class="inline-block px-3.5 py-1.5 rounded-full bg-silk-cream border border-khmergold-400/40 text-crimson-900 font-bold text-xs sm:text-sm">
+                    <span
+                        class="inline-block px-3.5 py-1.5 rounded-full bg-silk-cream border border-khmergold-400/40 text-crimson-900 font-bold text-xs sm:text-sm">
                         ម៉ោង ១១:៣០ ព្រឹក &bull; 11:30 AM
                     </span>
                 </div>
             </div>
 
-            <div class="rounded-2xl bg-gradient-to-r from-crimson-900 to-crimson-800 text-silk-ivory border border-khmergold-400/50 p-5 sm:p-6 shadow-md flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div
+                class="rounded-2xl bg-gradient-to-r from-crimson-900 to-crimson-800 text-silk-ivory border border-khmergold-400/50 p-5 sm:p-6 shadow-md flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
                     <h3 class="font-bold text-base sm:text-lg text-khmergold-300">ពិធីពិសាភោជនីយអាហារពេលល្ងាច</h3>
-                    <p class="font-serif italic text-sm sm:text-base text-silk-cream/90">Evening Wedding Banquet &amp; Reception</p>
-                    <p class="text-xs sm:text-sm text-silk-cream/85 mt-1">ស្ថិតនៅគេហដ្ឋានខាងប្រុស ភូមិផ្សារតាកែវ សង្កាត់រកាក្នុង ក្រុងដូនកែវ ខេត្តតាកែវ (នៅហាង អាក្លូកាហ្វេ Aklo Caffee and Tea)</p>
+                    <p class="font-serif italic text-sm sm:text-base text-silk-cream/90">Evening Wedding Banquet &amp;
+                        Reception</p>
+                    <p class="text-xs sm:text-sm text-silk-cream/85 mt-1">ស្ថិតនៅគេហដ្ឋានខាងប្រុស ភូមិផ្សារតាកែវ
+                        សង្កាត់រកាក្នុង ក្រុងដូនកែវ ខេត្តតាកែវ (នៅហាង អាក្លូកាហ្វេ Aklo Caffee and Tea)</p>
                 </div>
                 <div class="sm:text-right shrink-0">
-                    <span class="inline-block px-3.5 py-1.5 rounded-full bg-khmergold-400 text-crimson-950 font-bold text-xs sm:text-sm">
+                    <span
+                        class="inline-block px-3.5 py-1.5 rounded-full bg-khmergold-400 text-crimson-950 font-bold text-xs sm:text-sm">
                         វេលាម៉ោង ៤:០០ រសៀល &bull; 4:00 PM
                     </span>
                 </div>
             </div>
         </div>
 
-        <div class="mt-8 rounded-3xl bg-white/95 p-6 sm:p-8 border-2 border-khmergold-400/40 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6 reveal">
+        <div
+            class="mt-8 rounded-3xl bg-white/95 p-6 sm:p-8 border-2 border-khmergold-400/40 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6 reveal">
             <div class="text-center sm:text-left">
-                <span class="text-xs uppercase tracking-[0.2em] text-jade-800 font-bold">ទីតាំងប្រារព្ធពិធី &bull; Wedding Venue</span>
-                <h4 id="venue-name-display" class="font-moul text-base sm:text-xl text-crimson-900 mt-1.5 leading-relaxed">គេហដ្ឋានខាងប្រុស — ហាង អាក្លូកាហ្វេ (Aklo Caffee and Tea)</h4>
-                <p id="venue-address-display" class="text-xs sm:text-sm text-stone-700 mt-1">ភូមិផ្សារតាកែវ សង្កាត់រកាក្នុង ក្រុងដូនកែវ ខេត្តតាកែវ &bull; Phsar Takeo, Roka Knong, Krong Doun Kaev, Takeo</p>
+                <span class="text-xs uppercase tracking-[0.2em] text-jade-800 font-bold">ទីតាំងប្រារព្ធពិធី &bull;
+                    Wedding Venue</span>
+                <h4 id="venue-name-display"
+                    class="font-moul text-base sm:text-xl text-crimson-900 mt-1.5 leading-relaxed">គេហដ្ឋានខាងប្រុស —
+                    ហាង អាក្លូកាហ្វេ (Aklo Caffee and Tea)</h4>
+                <p id="venue-address-display" class="text-xs sm:text-sm text-stone-700 mt-1">ភូមិផ្សារតាកែវ
+                    សង្កាត់រកាក្នុង ក្រុងដូនកែវ ខេត្តតាកែវ &bull; Phsar Takeo, Roka Knong, Krong Doun Kaev, Takeo</p>
             </div>
 
-            <a id="venue-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Aklo+Caffee+and+Tea+Doun+Kaev+Takeo+Cambodia" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-jade-800 hover:bg-jade-900 text-silk-ivory font-bold text-xs sm:text-sm transition shadow-sm shrink-0">
+            <a id="venue-map-link"
+                href="https://www.google.com/maps/search/?api=1&amp;query=Aklo+Caffee+and+Tea+Doun+Kaev+Takeo+Cambodia"
+                target="_blank" rel="noopener noreferrer"
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-jade-800 hover:bg-jade-900 text-silk-ivory font-bold text-xs sm:text-sm transition shadow-sm shrink-0">
                 បើកផែនទី Google Maps
             </a>
         </div>
@@ -420,17 +507,20 @@
     <section id="gallery" class="py-20 sm:py-28 px-4 sm:px-6 bg-silk-cream/70 border-y border-khmergold-400/25">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-12 reveal">
-                <span class="text-xs uppercase tracking-[0.25em] text-crimson-700 font-bold">Pre-Wedding &amp; Traditional Portraits</span>
+                <span class="text-xs uppercase tracking-[0.25em] text-crimson-700 font-bold">Pre-Wedding &amp;
+                    Traditional Portraits</span>
                 <h2 class="font-moul text-2xl sm:text-4xl text-crimson-900 mt-2">កម្រងរូបភាពអនុស្សាវរីយ៍</h2>
                 <p class="text-xs sm:text-sm text-stone-600 mt-3">
                     ចុចលើរូបភាពដើម្បីពង្រីកធំ ឬប្រើប៊ូតុងខាងក្រោមដើម្បីបន្ថែម/ប្តូររូបភាព
                 </p>
 
                 <div class="mt-5 flex flex-wrap items-center justify-center gap-2.5">
-                    <button type="button" onclick="toggleEditMode()" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-crimson-900 hover:bg-crimson-800 text-khmergold-200 text-xs sm:text-sm font-semibold border border-khmergold-400/50 shadow-sm transition">
+                    <button type="button" onclick="toggleEditMode()"
+                        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-crimson-900 hover:bg-crimson-800 text-khmergold-200 text-xs sm:text-sm font-semibold border border-khmergold-400/50 shadow-sm transition">
                         <span id="gallery-edit-btn-text">បើកមុខងារប្តូររូបភាព (Change Photos)</span>
                     </button>
-                    <button type="button" onclick="triggerPhotoUpload('add')" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-jade-800 hover:bg-jade-900 text-silk-ivory text-xs sm:text-sm font-semibold border border-khmergold-400/40 shadow-sm transition">
+                    <button type="button" onclick="triggerPhotoUpload('add')"
+                        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-jade-800 hover:bg-jade-900 text-silk-ivory text-xs sm:text-sm font-semibold border border-khmergold-400/40 shadow-sm transition">
                         + បន្ថែមរូបថ្មី (Add Photo)
                     </button>
                 </div>
@@ -442,35 +532,47 @@
 
     <!-- Footer -->
     <footer class="bg-crimson-950 text-silk-ivory py-12 px-4 text-center border-t-2 border-khmergold-400/40">
-        <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-jade-900 border border-khmergold-400/60 font-serif italic font-bold text-xl text-khmergold-300 mb-3">BJ</div>
+        <div
+            class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-jade-900 border border-khmergold-400/60 font-serif italic font-bold text-xl text-khmergold-300 mb-3">
+            BJ</div>
         <p id="footer-names" class="font-moul text-lg sm:text-xl text-khmergold-300">សុខា វិបុល &amp; ស៊ុត ស្រីតី</p>
-        <p class="font-serif italic text-sm text-khmergold-200/80 mt-1">SOKHA VIBOL &amp; SUTH SREY TEY &bull; Wednesday 23<sup>rd</sup> December 2026</p>
+        <p class="font-serif italic text-sm text-khmergold-200/80 mt-1">SOKHA VIBOL &amp; SUTH SREY TEY &bull; Wednesday
+            23<sup>rd</sup> December 2026</p>
     </footer>
 
     <!-- Floating Edit Photo Button (Bottom-Left) -->
-    <button id="toggle-edit-btn" type="button" onclick="toggleEditMode()" aria-label="Customize Photos" class="fixed bottom-4 left-4 z-40 inline-flex items-center gap-2 px-4 py-3 rounded-full bg-jade-900/95 hover:bg-jade-800 text-silk-ivory backdrop-blur-md shadow-lg border border-khmergold-400/50 transition active:scale-95">
+    <button id="toggle-edit-btn" type="button" onclick="toggleEditMode()" aria-label="Customize Photos"
+        class="fixed bottom-4 left-4 z-40 inline-flex items-center gap-2 px-4 py-3 rounded-full bg-jade-900/95 hover:bg-jade-800 text-silk-ivory backdrop-blur-md shadow-lg border border-khmergold-400/50 transition active:scale-95">
         <span id="floating-edit-label" class="text-xs font-bold">ប្តូររូបភាព</span>
     </button>
 
     <!-- Floating Share Button (Bottom-Right) -->
-    <button id="share-btn" type="button" aria-label="Share Invitation Link" class="fixed bottom-4 right-4 z-40 inline-flex items-center gap-2 px-4 py-3 sm:px-5 rounded-full bg-crimson-900/95 hover:bg-crimson-800 text-khmergold-200 backdrop-blur-md shadow-lg border border-khmergold-400/50 transition active:scale-95">
+    <button id="share-btn" type="button" aria-label="Share Invitation Link"
+        class="fixed bottom-4 right-4 z-40 inline-flex items-center gap-2 px-4 py-3 sm:px-5 rounded-full bg-crimson-900/95 hover:bg-crimson-800 text-khmergold-200 backdrop-blur-md shadow-lg border border-khmergold-400/50 transition active:scale-95">
         <span class="text-xs font-bold">ចែករំលែកធៀបការ • Share</span>
     </button>
 
     <!-- Toast -->
-    <div id="toast" role="status" aria-live="polite" class="fixed bottom-20 left-4 right-4 sm:left-auto sm:right-4 z-50 pointer-events-none opacity-0 translate-y-3 transition-all duration-300 flex items-center justify-center gap-2 px-5 py-3.5 rounded-2xl bg-crimson-950 text-khmergold-200 text-xs sm:text-sm shadow-xl border border-khmergold-400/60">
+    <div id="toast" role="status" aria-live="polite"
+        class="fixed bottom-20 left-4 right-4 sm:left-auto sm:right-4 z-50 pointer-events-none opacity-0 translate-y-3 transition-all duration-300 flex items-center justify-center gap-2 px-5 py-3.5 rounded-2xl bg-crimson-950 text-khmergold-200 text-xs sm:text-sm shadow-xl border border-khmergold-400/60">
         <span id="toast-message">បានចម្លងតំណភ្ជាប់ធៀបការ! • Invitation link copied!</span>
     </div>
 
     <!-- Lightbox -->
-    <div id="lightbox" class="fixed inset-0 z-50 hidden bg-crimson-950/95 backdrop-blur-sm flex items-center justify-center p-4" role="dialog" aria-modal="true">
-        <button type="button" onclick="closeLightbox()" aria-label="Close" class="absolute top-5 right-5 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-khmergold-200 flex items-center justify-center text-2xl">&times;</button>
-        <button type="button" onclick="changeLightbox(-1)" aria-label="Previous" class="absolute left-3 sm:left-6 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-khmergold-200 flex items-center justify-center">&#10094;</button>
+    <div id="lightbox"
+        class="fixed inset-0 z-50 hidden bg-crimson-950/95 backdrop-blur-sm flex items-center justify-center p-4"
+        role="dialog" aria-modal="true">
+        <button type="button" onclick="closeLightbox()" aria-label="Close"
+            class="absolute top-5 right-5 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-khmergold-200 flex items-center justify-center text-2xl">&times;</button>
+        <button type="button" onclick="changeLightbox(-1)" aria-label="Previous"
+            class="absolute left-3 sm:left-6 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-khmergold-200 flex items-center justify-center">&#10094;</button>
         <div class="max-w-3xl max-h-[85vh] flex flex-col items-center">
-            <img id="lightbox-img" src="" alt="Gallery Preview" class="max-h-[75vh] w-auto rounded-2xl border-2 border-khmergold-400/50 shadow-2xl object-contain">
+            <img id="lightbox-img" src="" alt="Gallery Preview"
+                class="max-h-[75vh] w-auto rounded-2xl border-2 border-khmergold-400/50 shadow-2xl object-contain">
             <p id="lightbox-caption" class="text-khmergold-200 text-sm sm:text-base mt-4 text-center"></p>
         </div>
-        <button type="button" onclick="changeLightbox(1)" aria-label="Next" class="absolute right-3 sm:right-6 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-khmergold-200 flex items-center justify-center">&#10095;</button>
+        <button type="button" onclick="changeLightbox(1)" aria-label="Next"
+            class="absolute right-3 sm:right-6 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-khmergold-200 flex items-center justify-center">&#10095;</button>
     </div>
 
     <script>
@@ -518,11 +620,12 @@
             try {
                 const saved = localStorage.getItem(CUSTOM_STORAGE_KEY);
                 if (saved) {
-                    return {...DEFAULT_WEDDING_DATA,
+                    return {
+                        ...DEFAULT_WEDDING_DATA,
                         ...JSON.parse(saved)
                     };
                 }
-            } catch (e) {}
+            } catch (e) { }
             return JSON.parse(JSON.stringify(DEFAULT_WEDDING_DATA));
         }
 
@@ -605,9 +708,9 @@
             if (!file) return;
 
             const reader = new FileReader();
-            reader.onload = function(event) {
+            reader.onload = function (event) {
                 const img = new Image();
-                img.onload = function() {
+                img.onload = function () {
                     const canvas = document.createElement('canvas');
                     const MAX_DIM = 900;
                     let width = img.width;
@@ -721,7 +824,7 @@
             }, 3400);
         }
 
-        document.getElementById('share-btn').addEventListener('click', async() => {
+        document.getElementById('share-btn').addEventListener('click', async () => {
             const shareUrl = window.location.href;
             const shareTitle = `សិរីមង្គលអាពាហ៍ពិពាហ៍ | ${weddingData.groomKh} & ${weddingData.brideKh}`;
 
@@ -732,7 +835,7 @@
                         url: shareUrl
                     });
                     return;
-                } catch (err) {}
+                } catch (err) { }
             }
 
             const temp = document.createElement('textarea');
@@ -744,7 +847,7 @@
             try {
                 document.execCommand('copy');
                 showToast("បានចម្លងតំណភ្ជាប់ធៀបការ! • Invitation link copied!");
-            } catch (e) {}
+            } catch (e) { }
             document.body.removeChild(temp);
         });
     </script>
